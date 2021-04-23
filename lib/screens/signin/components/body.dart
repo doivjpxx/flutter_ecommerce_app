@@ -3,7 +3,6 @@ import 'package:flutter_ecommerce_shop/components/social_box.dart';
 import 'package:flutter_ecommerce_shop/constants.dart';
 import 'package:flutter_ecommerce_shop/screens/signin/components/signin_form.dart';
 import 'package:flutter_ecommerce_shop/size_config.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
   @override
