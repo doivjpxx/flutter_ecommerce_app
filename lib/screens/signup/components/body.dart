@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_shop/components/no_account_text.dart';
 import 'package:flutter_ecommerce_shop/components/social_form_group.dart';
-import 'package:flutter_ecommerce_shop/screens/signin/components/signin_form.dart';
+import 'package:flutter_ecommerce_shop/screens/signup/components/signup_form.dart';
 import 'package:flutter_ecommerce_shop/size_config.dart';
+
+import '../../../constants.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -16,31 +17,24 @@ class Body extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: SizeConfig.screenHeight * 0.04,
+                height: SizeConfig.screenHeight * 0.02,
               ),
               Text(
-                "Welcome Back",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: getProportionateScreenWidth(28),
-                    fontWeight: FontWeight.bold),
+                "Register Account",
+                style: headingStyle,
               ),
               Text(
-                "Sign in with your email and password \nor continue with social media",
+                "Complete your details or continue \nwith social media",
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: SizeConfig.screenHeight * 0.08,
+                height: SizeConfig.screenHeight * 0.09,
               ),
-              SignForm(),
+              SignupForm(),
               SizedBox(
-                height: SizeConfig.screenHeight * 0.08,
+                height: SizeConfig.screenHeight * 0.09,
               ),
-              SocialFormGroup(),
-              SizedBox(
-                height: getProportionateScreenWidth(20),
-              ),
-              NoAccountText()
+              SocialFormGroup()
             ],
           ),
         ),
