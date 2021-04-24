@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_shop/components/default_button.dart';
+import 'package:flutter_ecommerce_shop/screens/otp/otp_screen.dart';
 import 'package:flutter_ecommerce_shop/utils/build_textformfield.dart';
 
 import '../../../constants.dart';
@@ -117,7 +118,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           DefaultButton(
               text: "Continue",
               onPressed: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  Navigator.pushNamed(context, OTPScreen.routeName);
+                }
               })
         ],
       ),
