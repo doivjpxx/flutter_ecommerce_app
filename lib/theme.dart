@@ -29,17 +29,25 @@ TextTheme textTheme() {
 }
 
 InputDecorationTheme inputDecorationTheme() {
+  OutlineInputBorder outlineInputBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(28),
+    borderSide: BorderSide(color: kTextColor),
+    gapPadding: 10,
+  );
+
+  OutlineInputBorder outlineInputErrorBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(28),
+    borderSide: BorderSide(color: Colors.red.shade800, width: 2),
+    gapPadding: 10,
+  );
+
   return InputDecorationTheme(
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 42, vertical: 20),
-        labelStyle: TextStyle(color: kTextColor),
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(28),
-            borderSide: BorderSide(color: kTextColor),
-            gapPadding: 10),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(28),
-            borderSide: BorderSide(color: kTextColor),
-            gapPadding: 10));
+      contentPadding: const EdgeInsets.symmetric(horizontal: 42, vertical: 20),
+      labelStyle: TextStyle(color: kTextColor),
+      errorStyle: TextStyle(color: Colors.red.shade800),
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+      enabledBorder: outlineInputBorder,
+      focusedBorder: outlineInputBorder,
+      errorBorder: outlineInputErrorBorder,
+      focusedErrorBorder: outlineInputErrorBorder);
 }
