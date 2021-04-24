@@ -37,17 +37,24 @@ InputDecorationTheme inputDecorationTheme() {
 
   OutlineInputBorder outlineInputErrorBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(28),
+    borderSide: BorderSide(color: Colors.red.shade800, width: 1),
+    gapPadding: 10,
+  );
+
+  OutlineInputBorder outlineInputFocusErrorBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(28),
     borderSide: BorderSide(color: Colors.red.shade800, width: 2),
     gapPadding: 10,
   );
 
   return InputDecorationTheme(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 42, vertical: 20),
-      labelStyle: TextStyle(color: kTextColor),
-      errorStyle: TextStyle(color: Colors.red.shade800),
-      floatingLabelBehavior: FloatingLabelBehavior.always,
-      enabledBorder: outlineInputBorder,
-      focusedBorder: outlineInputBorder,
-      errorBorder: outlineInputErrorBorder,
-      focusedErrorBorder: outlineInputErrorBorder);
+    contentPadding: const EdgeInsets.symmetric(horizontal: 42, vertical: 20),
+    labelStyle: TextStyle(color: kTextColor),
+    errorStyle: TextStyle(color: Colors.red.shade800),
+    floatingLabelBehavior: FloatingLabelBehavior.always,
+    enabledBorder: outlineInputBorder,
+    focusedBorder: outlineInputBorder,
+    errorBorder: outlineInputErrorBorder,
+    focusedErrorBorder: outlineInputFocusErrorBorder,
+  );
 }
