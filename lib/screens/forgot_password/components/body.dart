@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_shop/components/custom_suffix_icon.dart';
 import 'package:flutter_ecommerce_shop/components/default_button.dart';
 import 'package:flutter_ecommerce_shop/components/form_error.dart';
 import 'package:flutter_ecommerce_shop/components/no_account_text.dart';
 import 'package:flutter_ecommerce_shop/size_config.dart';
+import 'package:flutter_ecommerce_shop/utils/build_textformfield.dart';
 
 import '../../../constants.dart';
 
@@ -108,27 +108,5 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
         ],
       ),
     );
-  }
-
-  TextFormField buildTextFormField(
-      {required String labelText,
-      TextInputType keyboardType = TextInputType.text,
-      required FormFieldValidator validator,
-      required Function(String) onChanged,
-      required Function(dynamic) onSaved,
-      required String hintText,
-      required String suffixIcon}) {
-    return TextFormField(
-        obscureText:
-            keyboardType == TextInputType.visiblePassword ? true : false,
-        validator: validator,
-        onChanged: onChanged,
-        onSaved: onSaved,
-        decoration: InputDecoration(
-            labelText: labelText,
-            hintText: hintText,
-            suffixIcon: CustomSuffixIcon(
-              svgIcon: suffixIcon,
-            )));
   }
 }

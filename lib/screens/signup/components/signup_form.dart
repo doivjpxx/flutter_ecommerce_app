@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ecommerce_shop/components/custom_suffix_icon.dart';
 import 'package:flutter_ecommerce_shop/components/default_button.dart';
 import 'package:flutter_ecommerce_shop/components/form_error.dart';
 import 'package:flutter_ecommerce_shop/screens/complete_profile/complete_profile_screen.dart';
+import 'package:flutter_ecommerce_shop/utils/build_textformfield.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -147,28 +147,5 @@ class _SignupFormState extends State<SignupForm> {
         ],
       ),
     );
-  }
-
-  TextFormField buildTextFormField(
-      {required String labelText,
-      TextInputType keyboardType = TextInputType.text,
-      required FormFieldValidator validator,
-      required Function(String) onChanged,
-      required Function(dynamic) onSaved,
-      required String hintText,
-      required String suffixIcon}) {
-    return TextFormField(
-        obscureText:
-            keyboardType == TextInputType.visiblePassword ? true : false,
-        validator: validator,
-        onChanged: onChanged,
-        onSaved: onSaved,
-        decoration: InputDecoration(
-            labelText: labelText,
-            hintText: hintText,
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            suffixIcon: CustomSuffixIcon(
-              svgIcon: suffixIcon,
-            )));
   }
 }
