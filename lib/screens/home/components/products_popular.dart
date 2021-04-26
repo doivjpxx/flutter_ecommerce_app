@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_shop/models/product.model.dart';
 import 'package:flutter_ecommerce_shop/screens/home/components/section_title.dart';
+import 'package:flutter_ecommerce_shop/screens/product_detail/product_detail_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
@@ -29,7 +30,10 @@ class ProductsPopular extends StatelessWidget {
                     image: demoProducts[index].images[0],
                     price: demoProducts[index].price,
                     isFavorite: demoProducts[index].isFavourite,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, ProductDetailScreen.routeName);
+                    },
                     onFavorite: () {}),
               ),
               SizedBox(width: getProportionateScreenHeight(20)),
