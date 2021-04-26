@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_shop/models/product.model.dart';
 import 'package:flutter_ecommerce_shop/screens/home/components/section_title.dart';
+import 'package:flutter_ecommerce_shop/screens/product_detail/components/body.dart';
 import 'package:flutter_ecommerce_shop/screens/product_detail/product_detail_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -23,19 +24,22 @@ class ProductsPopular extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              ...List.generate(
-                demoProducts.length,
-                (index) => ProductCard(
-                    title: demoProducts[index].title,
-                    image: demoProducts[index].images[0],
-                    price: demoProducts[index].price,
-                    isFavorite: demoProducts[index].isFavourite,
-                    onPressed: () {
-                      Navigator.pushNamed(
-                          context, ProductDetailScreen.routeName);
-                    },
-                    onFavorite: () {}),
-              ),
+              ...List.generate(demoProducts.length, (index) {
+                if (demoProducts[index].isPopular)
+                  return ProductCard(
+                      title: demoProducts[index].title,
+                      image: demoProducts[index].images[0],
+                      price: demoProducts[index].price,
+                      isFavorite: demoProducts[index].isFavourite,
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, ProductDetailScreen.routeName,
+                            arguments: ProductDetailsArguments(
+                                product: demoProducts[index]));
+                      },
+                      onFavorite: () {});
+                return SizedBox.shrink(); // height = 0
+              }),
               SizedBox(width: getProportionateScreenHeight(20)),
             ],
           ),
