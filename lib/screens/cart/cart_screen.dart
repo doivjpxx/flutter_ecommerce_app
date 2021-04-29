@@ -9,8 +9,25 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: buildAppBar(context),
       body: Body(),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      title: Column(
+        children: <Widget>[
+          Text(
+            "Your Cart",
+            style: TextStyle(color: Colors.black),
+          ),
+          Text(
+            "4 items",
+            style: Theme.of(context).textTheme.caption,
+          )
+        ],
+      ),
     );
   }
 }
