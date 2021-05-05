@@ -25,6 +25,7 @@ class ProfileAvatar extends StatelessWidget {
               height: 46,
               width: 46,
               child: FlatButton(
+                padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                     side: BorderSide(width: 2, color: Colors.white)),
